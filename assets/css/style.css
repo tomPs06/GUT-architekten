@@ -1,0 +1,219 @@
+/* ==========================================================================
+   GUT ARCHITEKTEN – Stylesheet
+   Schlicht, viel Weißraum, eine Schrift, Schwarz auf Weiß.
+   Alle Farben, Abstände und Schriftgrößen stehen oben als Variablen –
+   wer das Design anpassen will, ändert zuerst hier.
+   ========================================================================== */
+
+:root {
+  /* Farben */
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #8a8a8a;
+  --line: #e6e6e6;
+  --placeholder: #efefef;
+
+  /* Schrift: Systemschrift (Helvetica/Arial) – keine externen Fonts,
+     dadurch schnell und ohne Datenschutzprobleme (kein Google Fonts). */
+  --font: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+
+  --text-xs: 0.75rem;   /* 12px – Meta, Labels */
+  --text-s: 0.875rem;   /* 14px – Navigation, Bildunterschriften */
+  --text-m: 1rem;       /* 16px – Fließtext */
+  --text-l: clamp(1.25rem, 1rem + 1vw, 1.75rem);    /* Einleitung */
+  --text-xl: clamp(1.75rem, 1.2rem + 2.2vw, 3rem);  /* Projekttitel */
+
+  /* Abstände */
+  --gutter: clamp(16px, 4vw, 48px);
+  --gap: clamp(16px, 2.5vw, 32px);
+  --section: clamp(48px, 8vw, 120px);
+  --max: 1440px;
+}
+
+/* --- Reset --------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body, h1, h2, h3, p, figure, dl, dd, ul { margin: 0; padding: 0; }
+ul { list-style: none; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: var(--text-m);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main { flex: 1; }
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* --- Header -------------------------------------------------------------- */
+.site-header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--gap);
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.wordmark {
+  font-size: var(--text-s);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav { display: flex; gap: clamp(16px, 3vw, 40px); }
+.nav a {
+  font-size: var(--text-s);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.15s;
+}
+.nav a:hover,
+.nav a[aria-current="page"] { color: var(--fg); }
+
+/* --- Typografie ---------------------------------------------------------- */
+.lead {
+  font-size: var(--text-l);
+  line-height: 1.35;
+  max-width: 24em;
+  font-weight: 400;
+}
+
+.label {
+  display: block;
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.prose { max-width: 38em; }
+.prose p + p { margin-top: 1em; }
+.prose a { border-bottom: 1px solid var(--line); }
+.prose a:hover { border-color: var(--fg); }
+.prose h2 { font-size: var(--text-m); font-weight: 600; margin: 2em 0 0.5em; }
+
+.section { padding-top: var(--section); }
+.section:last-child { padding-bottom: var(--section); }
+
+/* --- Bild-Platzhalter ----------------------------------------------------
+   Ein <div class="ph"> steht für ein Bild, das noch fehlt.
+   Später einfach durch <img src="..." alt="..."> ersetzen.          */
+.ph {
+  background: var(--placeholder);
+  aspect-ratio: 4 / 3;
+  width: 100%;
+}
+.ph--wide { aspect-ratio: 16 / 9; }
+.ph--tall { aspect-ratio: 3 / 4; }
+.ph--square { aspect-ratio: 1 / 1; }
+
+/* --- Projekt-Raster (Startseite) ---------------------------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(var(--gap) * 2) var(--gap);
+}
+@media (max-width: 960px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+
+.card img,
+.card .ph {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: opacity 0.2s;
+}
+.card:hover img,
+.card:hover .ph { opacity: 0.85; }
+.card h3 {
+  font-size: var(--text-m);
+  font-weight: 400;
+  margin-top: 12px;
+}
+.card .label { margin-top: 2px; }
+
+/* --- Projektseite -------------------------------------------------------- */
+.project-head h1 {
+  font-size: var(--text-xl);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.project-body {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 2fr;
+  gap: var(--gap);
+  align-items: start;
+}
+@media (max-width: 760px) { .project-body { grid-template-columns: 1fr; } }
+
+.meta { display: grid; gap: 14px; }
+@media (min-width: 761px) { .meta { position: sticky; top: 24px; } }
+.meta dd { font-size: var(--text-s); }
+
+.gallery { display: grid; gap: var(--gap); }
+.gallery--2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 560px) { .gallery--2 { grid-template-columns: 1fr; } }
+.gallery figcaption {
+  font-size: var(--text-xs);
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.back {
+  font-size: var(--text-s);
+  color: var(--muted);
+}
+.back:hover { color: var(--fg); }
+
+/* --- Büro / Personen ----------------------------------------------------- */
+.people {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+@media (max-width: 760px) { .people { grid-template-columns: 1fr; } }
+.person h3 { font-size: var(--text-m); font-weight: 400; margin-top: 12px; }
+.person p { font-size: var(--text-s); color: var(--muted); margin-top: 6px; max-width: 30em; }
+
+/* --- Footer -------------------------------------------------------------- */
+.site-footer { border-top: 1px solid var(--line); margin-top: var(--section); }
+.site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px var(--gap);
+  padding-top: 20px;
+  padding-bottom: 28px;
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+.site-footer nav { display: flex; gap: 20px; }
+.site-footer a:hover { color: var(--fg); }
+
+/* --- Hilfsklassen -------------------------------------------------------- */
+.mt-s { margin-top: 16px; }
+.mt-m { margin-top: 32px; }
+.mt-l { margin-top: var(--section); }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}

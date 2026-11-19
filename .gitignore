@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+._*
+Icon?
+
+# iCloud-Platzhalter
+*.icloud
+
+# Lokale Einstellungen
+.claude/
