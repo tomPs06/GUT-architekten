@@ -8,3 +8,6 @@ Icon?
 
 # Lokale Einstellungen
 .claude/
+
+# Lokale Testkopien
+.vorschau/
