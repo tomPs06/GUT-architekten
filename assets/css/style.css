@@ -426,7 +426,30 @@ main { flex: 1; }
 
 /* Portfolio im Team-Abschnitt: volle Breite unter Foto und Lebenslauf */
 .member-portfolio { grid-column: 1 / -1; margin-top: calc(var(--gap) * 1.5); }
-.member-portfolio h3 { padding-bottom: 10px; border-bottom: 1px solid var(--line); margin-bottom: 20px; }
+.pf-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px var(--gap);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 20px;
+}
+.pf-tabs { display: flex; flex-wrap: wrap; gap: 4px 24px; }
+.pf-tabs [role="tab"] {
+  border: 0;
+  padding: 0 0 2px;
+  background: none;
+  font: inherit;
+  font-size: var(--text-s);
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+.pf-tabs [role="tab"]:hover { color: var(--fg); }
+.pf-tabs [role="tab"][aria-selected="true"] { color: var(--fg); border-bottom-color: var(--fg); }
+.pf-tabs [role="tab"]:focus-visible { outline: 1px solid var(--fg); outline-offset: 3px; }
 
 /* --- Footer -------------------------------------------------------------- */
 .site-footer { border-top: 1px solid var(--line); margin-top: var(--section); }

@@ -321,9 +321,35 @@
     }
   };
 
+  /* --- Reiter zum Umschalten zwischen mehreren Portfolios einer Person ---- */
+  function initTabs(list) {
+    var tabs = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
+    function select(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute("aria-controls"));
+        if (panel) panel.hidden = !on;
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { select(t, false); });
+      t.addEventListener("keydown", function (e) {
+        var j = null;
+        if (e.key === "ArrowRight") j = (i + 1) % tabs.length;
+        else if (e.key === "ArrowLeft") j = (i - 1 + tabs.length) % tabs.length;
+        if (j !== null) { e.preventDefault(); select(tabs[j], true); }
+      });
+    });
+  }
+
   function init() {
     var nodes = document.querySelectorAll(".pv");
     for (var i = 0; i < nodes.length; i++) new Viewer(nodes[i]);
+    var lists = document.querySelectorAll(".pf-tabs");
+    for (var k = 0; k < lists.length; k++) initTabs(lists[k]);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();

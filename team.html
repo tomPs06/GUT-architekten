@@ -79,10 +79,22 @@
       </div>
 
       <section class="member-portfolio" id="gilbert-portfolio" aria-labelledby="gilbert-pf-titel">
-        <h3 class="label" id="gilbert-pf-titel">Portfolio</h3>
-        <!-- PORTFOLIO: Seiten als 01.jpg, 02.jpg … nach assets/portfolios/gilbert/ legen,
-             dann data-base="assets/portfolios/gilbert/" ergänzen und data-pages anpassen. -->
-        <div class="pv" data-title="Portfolio Vorname Gilbert" data-pages="16"></div>
+        <div class="pf-head">
+          <h3 class="label" id="gilbert-pf-titel">Portfolio</h3>
+          <div class="pf-tabs" role="tablist" aria-label="Portfolios Vorname Gilbert">
+          <button type="button" role="tab" id="gilbert-tab-1" aria-selected="true" aria-controls="gilbert-pf-1">Portfolio 1</button>
+          <button type="button" role="tab" id="gilbert-tab-2" aria-selected="false" aria-controls="gilbert-pf-2" tabindex="-1">Portfolio 2</button>
+          </div>
+        </div>
+        <!-- PORTFOLIO: Seiten als 01.jpg, 02.jpg … nach assets/portfolios/gilbert/NAME/ legen,
+             dann beim Viewer data-base="assets/portfolios/gilbert/NAME/" data-ext="jpg" ergänzen,
+             data-pages anpassen und den Reiter-Text (Portfolio 1/2) ersetzen. -->
+        <div role="tabpanel" id="gilbert-pf-1" aria-labelledby="gilbert-tab-1">
+          <div class="pv" data-title="Portfolio Portfolio 1, Vorname Gilbert" data-pages="16"></div>
+        </div>
+        <div role="tabpanel" id="gilbert-pf-2" aria-labelledby="gilbert-tab-2" hidden>
+          <div class="pv" data-title="Portfolio Portfolio 2, Vorname Gilbert" data-pages="16"></div>
+        </div>
       </section>
     </article>
 
@@ -128,10 +140,22 @@
       </div>
 
       <section class="member-portfolio" id="usslar-portfolio" aria-labelledby="usslar-pf-titel">
-        <h3 class="label" id="usslar-pf-titel">Portfolio</h3>
-        <!-- PORTFOLIO: Seiten als 01.jpg, 02.jpg … nach assets/portfolios/usslar/ legen,
-             dann data-base="assets/portfolios/usslar/" ergänzen und data-pages anpassen. -->
-        <div class="pv" data-title="Portfolio Vorname Usslar" data-pages="16"></div>
+        <div class="pf-head">
+          <h3 class="label" id="usslar-pf-titel">Portfolio</h3>
+          <div class="pf-tabs" role="tablist" aria-label="Portfolios Vorname Usslar">
+          <button type="button" role="tab" id="usslar-tab-1" aria-selected="true" aria-controls="usslar-pf-1">Portfolio 1</button>
+          <button type="button" role="tab" id="usslar-tab-2" aria-selected="false" aria-controls="usslar-pf-2" tabindex="-1">Portfolio 2</button>
+          </div>
+        </div>
+        <!-- PORTFOLIO: Seiten als 01.jpg, 02.jpg … nach assets/portfolios/usslar/NAME/ legen,
+             dann beim Viewer data-base="assets/portfolios/usslar/NAME/" data-ext="jpg" ergänzen,
+             data-pages anpassen und den Reiter-Text (Portfolio 1/2) ersetzen. -->
+        <div role="tabpanel" id="usslar-pf-1" aria-labelledby="usslar-tab-1">
+          <div class="pv" data-title="Portfolio Portfolio 1, Vorname Usslar" data-pages="16"></div>
+        </div>
+        <div role="tabpanel" id="usslar-pf-2" aria-labelledby="usslar-tab-2" hidden>
+          <div class="pv" data-title="Portfolio Portfolio 2, Vorname Usslar" data-pages="16"></div>
+        </div>
       </section>
     </article>
 
@@ -177,10 +201,19 @@
       </div>
 
       <section class="member-portfolio" id="tomschin-portfolio" aria-labelledby="tomschin-pf-titel">
-        <h3 class="label" id="tomschin-pf-titel">Portfolio</h3>
-        <!-- PORTFOLIO: Seiten als 01.jpg, 02.jpg … nach assets/portfolios/tomschin/ legen,
-             dann data-base="assets/portfolios/tomschin/" ergänzen und data-pages anpassen. -->
-        <div class="pv" data-title="Portfolio Philipp Tomschin" data-pages="16"></div>
+        <div class="pf-head">
+          <h3 class="label" id="tomschin-pf-titel">Portfolio</h3>
+          <div class="pf-tabs" role="tablist" aria-label="Portfolios Philipp Tomschin">
+          <button type="button" role="tab" id="tomschin-tab-1" aria-selected="true" aria-controls="tomschin-pf-1">SoSe 26</button>
+          <button type="button" role="tab" id="tomschin-tab-2" aria-selected="false" aria-controls="tomschin-pf-2" tabindex="-1">WS 25/26</button>
+          </div>
+        </div>
+        <div role="tabpanel" id="tomschin-pf-1" aria-labelledby="tomschin-tab-1">
+          <div class="pv" data-title="Portfolio SoSe 26, Philipp Tomschin" data-pages="32" data-base="assets/portfolios/tomschin/sose26/" data-ext="jpg"></div>
+        </div>
+        <div role="tabpanel" id="tomschin-pf-2" aria-labelledby="tomschin-tab-2" hidden>
+          <div class="pv" data-title="Portfolio WS 25/26, Philipp Tomschin" data-pages="64" data-base="assets/portfolios/tomschin/ws2526/" data-ext="jpg"></div>
+        </div>
       </section>
     </article>
   </main>

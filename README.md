@@ -44,11 +44,11 @@ Portfolio einbinden (Seiten 21 × 21 cm):
    Auflösung 150 ppi (ergibt ca. 1240 × 1240 px), Qualität hoch.
    Aus einem PDF: in Vorschau/Acrobat jede Seite als JPG exportieren.
 2. Dateien durchnummerieren: `01.jpg`, `02.jpg`, … und in den Ordner der Person legen,
-   z. B. `assets/portfolios/tomschin/`.
+   je Portfolio ein Unterordner, z. B. `assets/portfolios/tomschin/sose26/`.
 3. In `team.html` beim Viewer der Person ergänzen bzw. anpassen:
    ```html
    <div class="pv" data-title="Portfolio Philipp Tomschin"
-        data-pages="24" data-base="assets/portfolios/tomschin/" data-ext="jpg"></div>
+        data-pages="32" data-base="assets/portfolios/tomschin/sose26/" data-ext="jpg"></div>
    ```
    `data-pages` ist die Seitenzahl. Ohne `data-base` zeigt der Viewer Platzhalter-Seiten.
 
