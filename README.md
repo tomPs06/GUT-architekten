@@ -1,6 +1,10 @@
 # GUT STUDIO – Website
 
-Website von Gilbert, Usslar und Tomschin. Reines HTML + CSS, kein Build-Schritt, kein JavaScript.
+Website von Gilbert, Usslar und Tomschin. Reines HTML + CSS, kein Build-Schritt.
+JavaScript gibt es nur für den Portfolio-Viewer (`assets/js/portfolio-viewer.js`), ohne externe Bibliotheken.
+
+**Arbeitsweise:** Änderungen im Branch `entwicklung` machen und testen. Erst danach in `main`
+übernehmen und pushen, denn `main` ist sofort live auf gut-studio.de.
 Die Dateien lassen sich direkt bei jedem Hoster hochladen (z. B. GitHub Pages oder Netlify).
 
 ## Struktur
@@ -26,6 +30,30 @@ assets/
 3. In der neuen Datei Titel, Metadaten und Text ersetzen; jede `<div class="ph …"></div>` durch
    `<img src="../assets/img/projekte/hanghaus-binz/01.jpg" alt="Beschreibung">` ersetzen.
 4. In `index.html` eine neue `<li class="card">` anlegen, die auf die Datei verlinkt.
+
+## Team und Portfolios
+
+`team.html` hat pro Person einen Abschnitt (Foto, Kontakt, Lebenslauf) und darunter einen
+**Portfolio-Viewer**: Seite 1 als Cover allein, danach Doppelseiten (2–3, 4–5, …) wie im Buch.
+Geblättert wird mit den Pfeilen, per Klick auf die linke/rechte Seite, mit den Pfeiltasten oder
+durch Wischen. Auf dem Handy (hochkant) kommt eine Seite nach der anderen. Es gibt einen Vollbild-Knopf.
+
+Portfolio einbinden (Seiten 21 × 21 cm):
+
+1. Aus InDesign: *Datei → Exportieren → JPEG*, **Einzelseiten** (nicht Druckbögen),
+   Auflösung 150 ppi (ergibt ca. 1240 × 1240 px), Qualität hoch.
+   Aus einem PDF: in Vorschau/Acrobat jede Seite als JPG exportieren.
+2. Dateien durchnummerieren: `01.jpg`, `02.jpg`, … und in den Ordner der Person legen,
+   z. B. `assets/portfolios/tomschin/`.
+3. In `team.html` beim Viewer der Person ergänzen bzw. anpassen:
+   ```html
+   <div class="pv" data-title="Portfolio Philipp Tomschin"
+        data-pages="24" data-base="assets/portfolios/tomschin/" data-ext="jpg"></div>
+   ```
+   `data-pages` ist die Seitenzahl. Ohne `data-base` zeigt der Viewer Platzhalter-Seiten.
+
+Porträts nach `assets/img/team/` legen und die graue Fläche (`<div class="ph ph--tall"></div>`)
+durch `<img class="portrait" src="assets/img/team/tomschin.jpg" alt="Porträt Philipp Tomschin">` ersetzen.
 
 ## Bilder
 
