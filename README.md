@@ -55,6 +55,12 @@ Portfolio einbinden (Seiten 21 × 21 cm):
 Porträts nach `assets/img/team/` legen und die graue Fläche (`<div class="ph ph--tall"></div>`)
 durch `<img class="portrait" src="assets/img/team/tomschin.jpg" alt="Porträt Philipp Tomschin">` ersetzen.
 
+## Nach Änderungen an CSS oder JavaScript
+
+Alle Seiten laden `style.css?v=2` und `portfolio-viewer.js?v=2`. Wer `style.css` oder
+`portfolio-viewer.js` ändert, zählt die Nummer in **allen** HTML-Dateien hoch (`?v=3` usw.).
+Sonst sehen Besucher, die die Seite schon kennen, noch die alte Datei aus ihrem Browser-Speicher.
+
 ## Bilder
 
 - Format: JPG oder WebP, ca. 2000 px breit (Titelbild) bzw. 1200 px (Raster), möglichst unter 500 KB.
