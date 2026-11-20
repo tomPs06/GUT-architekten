@@ -25,22 +25,39 @@
   <main>
     <section class="wrap section">
       <h1 class="label">Team</h1>
-      <nav class="jump mt-s" aria-label="Personen">
-        <a href="#gilbert">Gilbert</a>
-        <a href="#usslar">Usslar</a>
-        <a href="#tomschin">Tomschin</a>
-      </nav>
+      <!-- FOTOS: <div class="ph ph--tall"></div> ersetzen durch
+           <img class="portrait" src="assets/img/team/NAME.jpg" alt="Porträt Vorname Nachname"> -->
+      <ul class="people-grid mt-m">
+        <li class="person-card">
+          <a href="#gilbert">
+            <div class="ph ph--tall"></div>
+            <h2>Vorname Gilbert</h2>
+            <span class="person-more">Lebenslauf und Portfolio ↓</span>
+          </a>
+        </li>
+        <li class="person-card">
+          <a href="#usslar">
+            <div class="ph ph--tall"></div>
+            <h2>Vorname Usslar</h2>
+            <span class="person-more">Lebenslauf und Portfolio ↓</span>
+          </a>
+        </li>
+        <li class="person-card">
+          <a href="#tomschin">
+            <div class="ph ph--tall"></div>
+            <h2>Philipp Tomschin</h2>
+            <span class="person-more">Lebenslauf und Portfolio ↓</span>
+          </a>
+        </li>
+      </ul>
     </section>
 
-    <!-- PERSON: Jede Person ist ein <article class="member">.
-         Foto: <div class="ph ph--tall"></div> ersetzen durch
-         <img class="portrait" src="assets/img/team/NAME.jpg" alt="Porträt Vorname Nachname">
+    <!-- PERSON: Jede Person ist ein <article class="member"> mit Kontakt, Lebenslauf und Portfolios.
          Lebenslauf: pro Station eine Zeile <dt>Zeitraum</dt><dd>Station <span>Ort</span></dd> -->
 
     <!-- ============================== GILBERT ============================== -->
     <article class="wrap member" id="gilbert" aria-labelledby="gilbert-name">
       <div class="member-side">
-        <div class="ph ph--tall"></div>
         <h2 id="gilbert-name">Vorname Gilbert</h2>
         <dl class="contact">
           <div><dt class="label">E-Mail</dt><dd><a href="mailto:gilbert@gut-studio.de">gilbert@gut-studio.de</a></dd></div>
@@ -101,7 +118,6 @@
     <!-- ============================== USSLAR =============================== -->
     <article class="wrap member" id="usslar" aria-labelledby="usslar-name">
       <div class="member-side">
-        <div class="ph ph--tall"></div>
         <h2 id="usslar-name">Vorname Usslar</h2>
         <dl class="contact">
           <div><dt class="label">E-Mail</dt><dd><a href="mailto:usslar@gut-studio.de">usslar@gut-studio.de</a></dd></div>
@@ -162,7 +178,6 @@
     <!-- ============================== TOMSCHIN ============================= -->
     <article class="wrap member" id="tomschin" aria-labelledby="tomschin-name">
       <div class="member-side">
-        <div class="ph ph--tall"></div>
         <h2 id="tomschin-name">Philipp Tomschin</h2>
         <dl class="contact">
           <div><dt class="label">E-Mail</dt><dd><a href="mailto:tomschin@gut-studio.de">tomschin@gut-studio.de</a></dd></div>

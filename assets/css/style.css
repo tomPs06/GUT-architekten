@@ -201,9 +201,41 @@ main { flex: 1; }
 .person p { font-size: var(--text-s); color: var(--muted); margin-top: 6px; max-width: 30em; }
 
 /* --- Team ---------------------------------------------------------------- */
-.jump { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: var(--text-l); }
-.jump a { color: var(--muted); transition: color 0.15s; }
-.jump a:hover { color: var(--fg); }
+/* Drei Personen nebeneinander – auf jeder Bildschirmbreite */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+}
+.person-card a { display: block; }
+.person-card .ph,
+.person-card .portrait {
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s;
+}
+.person-card a:hover .ph,
+.person-card a:hover .portrait { opacity: 0.85; }
+.person-card h2 {
+  margin-top: 12px;
+  font-size: var(--text-l);
+  font-weight: 400;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.person-more {
+  display: block;
+  margin-top: 6px;
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+.person-card a:hover .person-more { color: var(--fg); }
+@media (max-width: 600px) {
+  .people-grid { gap: 10px; }
+  .person-card h2 { font-size: var(--text-s); margin-top: 8px; }
+  .person-more { display: none; }
+}
 
 .member {
   display: grid;
@@ -217,13 +249,7 @@ main { flex: 1; }
 @media (max-width: 760px) { .member { grid-template-columns: 1fr; } }
 
 .member-side { display: grid; gap: 16px; min-width: 0; }
-.member-side .ph,
-.member-side .portrait { aspect-ratio: 3 / 4; width: 100%; max-width: 360px; object-fit: cover; }
-@media (max-width: 760px) {
-  .member-side .ph,
-  .member-side .portrait { max-width: 260px; }
-}
-.member-side h2 { font-size: var(--text-l); font-weight: 400; line-height: 1.2; margin-top: 4px; }
+.member-side h2 { font-size: var(--text-l); font-weight: 400; line-height: 1.2; }
 
 .contact { display: grid; gap: 10px; }
 .contact dd { font-size: var(--text-s); overflow-wrap: anywhere; }
