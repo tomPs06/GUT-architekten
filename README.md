@@ -1,4 +1,4 @@
-# GUT ARCHITEKTEN – Website
+# GUT STUDIO – Website
 
 Website von Gilbert, Usslar und Tomschin. Reines HTML + CSS, kein Build-Schritt, kein JavaScript.
 Die Dateien lassen sich direkt bei jedem Hoster hochladen (z. B. GitHub Pages oder Netlify).
@@ -68,4 +68,4 @@ Regeln, damit nichts kaputtgeht:
 
 - Impressum und Datenschutz mit echten Angaben füllen.
 - Mail-Adresse und Instagram auf `kontakt.html` eintragen.
-- Domain prüfen, z. B. gut-architekten.de.
+- Domain: gut-studio.de (bei Strato, DNS zeigt auf GitHub Pages).
